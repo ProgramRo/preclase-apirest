@@ -27,7 +27,7 @@ const asyncReadFile = (pathName) => {
 
 const asyncRename = (pathName, newName) => {
     return new Promise((resolve, reject) => {
-        fs.readFile(pathName, newName, (err, data) => {
+        fs.rename(pathName, newName, (err, data) => {
             if (err) {
                 reject(err)
             }
@@ -40,7 +40,7 @@ const asyncRename = (pathName, newName) => {
 
 const asyncUnlink = (pathName) => {
     return new Promise((resolve, reject) => {
-        fs.readFile(pathName, (err, data) => {
+        fs.unlink(pathName, (err, data) => {
             if (err) {
                 reject(err)
             }
